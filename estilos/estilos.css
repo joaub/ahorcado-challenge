@@ -1,0 +1,349 @@
+:root{
+    --fuenteGeneral: 'Inter', sans-serif;
+    --negri: #1A1A1A; /*Color del footer*/
+}
+
+/* VARIABLES GLOBALES  */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 rem = 10px */ 
+    min-height: 100%;
+    position: relative;   
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+body{
+    margin: 0;
+    font-family: var(--fuenteGeneral);
+    background-color:rgb(44, 186, 241);
+    
+}
+
+/* HEADER */
+.header{
+    padding: 4rem;
+    display: flex;
+    justify-content: start;
+}
+
+/* MAIN - */
+.pantalla-inicio{
+    margin: 0 auto;
+    padding: 5rem;
+    border-radius: 2rem;
+    background: darkgrey;
+}
+.btn{
+    width: 100%;
+    padding: 2rem;
+    margin: 1rem;
+    border: none ;
+    border-radius: 2rem;
+    background: darkgoldenrod;
+    cursor: pointer;
+    transition: all .3s ease-out;
+}
+.btnSecundario{
+    padding: 1rem;
+    background: none;
+    border: .2rem solid darkgoldenrod;
+}
+.btnSecundario:hover{
+    background: darkgoldenrod;
+    font-size: 1.2rem;
+}
+#btnStart:hover{
+    background: darkgoldenrod;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+    body{
+        height: 100vh;
+    }
+    .pantalla-inicio{
+        width: 80%;
+        font-size: 1.4rem;
+    }
+    .pantalla-inicio #btnStart:hover{
+        background: goldenrod;
+        font-size: 1.5rem;
+    }
+    .pantalla-inicio .btnSecundario:hover{
+        background: darkgoldenrod;
+        font-size: 1.5rem;
+    }
+    .gif{
+        width: 50%;
+    }
+    .gif{
+        width: 75%;
+        height: 60px;
+    }
+    
+}
+@media (min-width: 1024px) {
+    
+    .pantalla-inicio{
+        width: 50%;
+        font-size: 1.4rem;
+    }
+    .gif{
+        width: 50%;
+    }
+    .gif{
+        width: 85%;
+        height: 60px;
+    }
+}
+
+
+/* MAIN - AHORCADO */
+
+.pantalla-juego{ /*Contenedor del contenedor de pistas y del contenedor del dibujo del ahorcado*/
+    margin: 0 auto;
+    width: 50%;
+    padding: 1rem;
+    margin-top: -2rem;
+}
+.pantalla-juego canvas{ /*Contenedor del dibujo del ahorcado*/
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 2rem;
+}
+.pista-visible{
+    text-align: center;
+    padding: 1.5rem;
+}
+#pista{
+    display: inline;
+    color: var(--negri);
+    font-size: 1.5rem;
+    width: 50%;
+    padding: 1rem;
+    background: darkgrey;
+    border-radius: 1rem 1rem 1rem 1rem;
+    margin-top: 0.5rem;
+}
+
+
+@media (min-width: 768px) {
+
+    .pantalla-juego canvas{
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+    }
+}
+@media (min-width: 1024px) {
+
+     .pantalla-juego{
+        display: block;
+        margin:  0 auto;
+         width: 80%;
+     }
+     .pantalla-juego canvas{
+        display: block;
+        margin:  0 auto;
+        width: 25%;
+
+    }
+}
+
+
+
+/* MAIN - TECLADO */
+.teclado{
+    display: flex;
+    width: 83%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 2rem;
+    margin-top:  -4rem;
+    background-color: darkgoldenrod;
+}
+
+.btnTeclado {
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #1A1A1A;
+    border-radius: 1.5rem;
+    margin-bottom: .5rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    padding: .6rem .8rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.btnTeclado:disabled {
+    pointer-events: none;
+}
+
+.btnTeclado:hover {
+    color: palegoldenrod; 
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.btnTeclado:active {
+    box-shadow: none;
+    transform: translateY(0);
+
+}
+.teclaDeshabilitada:disabled{
+    pointer-events: none;
+    appearance: none;
+    background-color: palegoldenrod;
+    border: 1px solid #1A1A1A;
+    border-radius: 1.5rem;
+    margin-bottom: .5rem;
+    box-sizing: border-box;
+    display: inline-block;
+    outline: none;
+    padding: .6rem .8rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+.btnTrue{
+    color: white;
+    background-color: darkgreen;
+}
+.disableBtn{
+    color: white;
+    background-color: darkred;
+}
+@media (min-width: 768px) {
+    .teclado{
+        margin: 0 auto;
+        width: 53%;
+    }
+    .btnTeclado{
+        padding: 1rem 1.4rem;
+        font-size: 1.5rem;
+    }
+    .teclaDeshabilitada:disabled{
+        font-size: 1.5rem;
+        padding: 1rem 1.2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .teclado{
+        margin: 0 auto;
+        width: 35%;
+    }
+    .btnTeclado{
+        padding: 1rem 1.4rem;
+        font-size: 1.5rem;
+    }
+    .teclaDeshabilitada:disabled{
+        font-size: 1.5rem;
+        padding: 1rem 1.2rem;
+    }
+}
+
+/* BOTONES - AHORCADO */
+.btnJuego{
+    display: flex;
+    width: 100%;
+    padding: 3rem
+}
+.btnJuego .btn{
+    margin-top: -.2rem;
+    padding: 2.1rem;
+    display: inline-block;
+}
+#btnReiniciar:hover , #btnGuardar:hover{
+    font-size: 1.3rem;
+    background: goldenrod; /*Color en que se pone el botón cuando paso por encima*/
+}
+
+@media (min-width: 768px) {
+    .btnJuego{
+        margin: 0 auto;
+        width: 60%;
+    }
+    .btnJuego .btn{
+        width: 40%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .btnJuego{
+        margin: 0 auto;
+        width: 40%;
+    }
+    .btnJuego .btn{
+        padding: 2rem;
+
+        width: 40%;
+    }
+}
+
+
+/* AGREGAR PALABRAS */
+.pantallaAgregar{
+    padding: 2rem;
+    margin: 0 auto;
+}
+.inputForm{
+    display: grid;
+}
+
+#newPalabra{
+    background: darkred;
+    border: none;
+    margin: .5rem 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: palegoldenrod;
+}
+
+
+#newPalabra::placeholder{
+    text-align: start;
+    color: var(--negri);
+
+}
+@media (min-width: 768px) {
+    .pantallaAgregar{
+        width: 60%;
+    }
+}
+@media (min-width: 1024px) {
+    .pantallaAgregar{
+        width: 40%;
+    }
+}
+
+
+/* FOOTER */
+/*Listo*/
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: var(--negri);
+}
+
+.footer p{
+    color: white;
+    font-size: 1.5rem;
+}
